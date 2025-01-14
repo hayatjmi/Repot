@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direct PDF Download</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* Professional and small download link styling */
+        #downloadLink {
+            font-size: 14px;
+            color: #007BFF;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid #007BFF;
+            border-radius: 5px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        #downloadLink:hover {
+            background-color: #007BFF;
+            color: white;
+            border-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Download your report</h1>
+
+    <!-- Small and professional download link -->
+    <a id="downloadLink" href="#" onclick="startDownload()">Report</a>
+
+    <script>
+        // Function to start the PDF download when the link is clicked
+        function startDownload() {
+            const pdfUrl = 'report.pdf'; // Replace with the URL of your PDF
+            const link = document.createElement('a');
+            link.href = pdfUrl;
+            link.download = 'report.pdf'; // Optionally specify the name of the file
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
